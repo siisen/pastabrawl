@@ -2,7 +2,7 @@
 import random
 import time
 round = 0
-divider = "------------------------------------------------------------"
+divider = "----------------------------------------------------------------"
 
 #Class for the fighters
 class Superhero:
@@ -38,7 +38,7 @@ class Superhero:
             enemy.health = enemy.health + result
             user_health_level= int(100 / 15 * self.health)
             monster_health_level = int(100 / 15 * enemy.health)
-            print("\nYeah, you WON this round! Keep going!")
+            print("\nYeah, you WON this round!")
         elif result > 0:
             self.health = self.health - result
             user_health_level = int(100 / 15 * self.health)
@@ -88,10 +88,10 @@ while int(user.health) > 0 and int(enemy.health) > 0:
 
 #Outro
 if user.health > enemy.health:
-    message = "\nYou won and defeated the incredible Spaghetti Monster in just " + str(round) + "rounds! Glory to " +user_name + "!\n"
+    message = "\nYou won and defeated the incredible Spaghetti Monster in just " + str(round) + " rounds! Glory to " +user_name + "!\n"
 else:
     message = "\nYou lost. So sad. The incredible Spaghetti Monster was too strong today. Let's try again!\n"
 
 print(message)
 print(input(""))
-print("That's it. The program has terminated\n" + str(divider) + "\n\n")
+print("That's it. The program has terminated\n" + str(divider) + "\n" + str(divider) + "\n")
