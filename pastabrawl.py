@@ -6,12 +6,13 @@ divider = "----------------------------------------------------------------"
 
 #Class for the fighters
 class Superhero:
-    
+    #Init method for fighters class
     def __init__(self, hero_name, health, strenght):
         self.hero_name = hero_name
         self.health = health
         self.strenght = strenght
-
+    
+    #Function that adds or substracts to the strenght of the character, depending on what food choice was made.
     def eating(self, food):
         if food == "1":
             self.strenght = 1
@@ -30,6 +31,7 @@ class Superhero:
             print(input("\nYou are not hungry? Well, ok, good luck!\nPress 'Enter' if you are ready to fight.\n\n"))
         return self.strenght
 
+    #Battle function that uses radomized values between 1 and 10 added to the previously defined strength of a character. Winner takes it al. Difference will be subtracted from loser's healt level.
     def attack(self):
         defend_strenght =  random.randint(1, 10)
         self.strenght = self.strenght + random.randint(1, 10)
@@ -81,6 +83,7 @@ while int(user.health) > 0 and int(enemy.health) > 0:
     print("\nAlright, brace yourself " + user_name + "! Round " + str(round) + " is in progress! Wait for it...\n" + divider )
     time.sleep(2)
     user.attack()
+    #If one character reaches health level of 0, thegame will end.
     if user.health > 0 and enemy.health > 0:
         print(input("\nLet's move on. Press enter if you are ready for the next round. "))
     else:
